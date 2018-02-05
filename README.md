@@ -11,7 +11,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```bash
-$ composer require desarrolla2/menu-bundle
+$ composer require madforwebs/menu-bundle
 ```
 This command requires you to have Composer installed globally, as explained
 in the `installation chapter` of the Composer documentation.
