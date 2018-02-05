@@ -1,0 +1,7 @@
+services:
+    core.twig.menu_extension:
+        class: 'MadForWebs\MenuBundle\Twig\MenuExtension'
+        arguments:
+            - '@service_container'
+        tags:
+            - { name: 'twig.extension' }

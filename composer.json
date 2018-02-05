@@ -1,0 +1,20 @@
+{
+  "name": "madforwebs/menu-bundle",
+  "description": "This bundle provides a menu bundle for symfony2",
+  "type": "symfony-bundle",
+  "autoload": {
+    "psr-4": {
+      "MadForWebs\\MenuBundle\\": ""
+    }
+  },
+  "require": {
+    "symfony/framework-bundle": "~2.3|~3.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fernando Sánchez Martínez",
+      "email": "fer@madforwebs.com"
+    }
+  ]
+}
