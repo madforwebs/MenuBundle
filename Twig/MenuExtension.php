@@ -29,6 +29,9 @@ class MenuExtension extends \Twig_Extension
     /** @var \Twig_Environment */
     private $twig;
 
+    /** @var \Symfony\Component\HttpFoundation\Session\Session $session */
+    private $session;
+
     /** @var Router */
     private $router;
 
@@ -54,6 +57,7 @@ class MenuExtension extends \Twig_Extension
         if ($this->request) {
             $this->route = $this->request->get('_route');
         }
+        $this->session = $container->get('session');
     }
 
     /**
@@ -88,7 +92,7 @@ class MenuExtension extends \Twig_Extension
             throw new \InvalidArgumentException(sprintf('Class "%s" not implements MenuInterface', $serviceOrClassName));
         }
 
-        $menu = $builder->getMenu();
+        $menu = $builder->getMenu($this->session);
         $menu = $this->prepareMenu($menu, $parameters);
         if ($this->twig->getLoader()->exists(sprintf('MenuBundle:Menu:%s.html.twig', $template))) {
             return $this->twig->render(sprintf('MenuBundle:Menu:%s.html.twig', $template), ['menu' => $menu]);

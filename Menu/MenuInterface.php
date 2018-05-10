@@ -15,5 +15,5 @@ namespace MadForWebs\MenuBundle\Menu;
 
 interface MenuInterface
 {
-    public function getMenu();
+    public function getMenu($session);
 }
